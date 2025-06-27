@@ -1,3 +1,14 @@
+# Hackweek Countdown Crisis
+
+## Bug Fixes and Improvements
+
+- **Critical Null Reference Error Fixed:**
+  - The `CommunityInfo` component previously fetched `cosc.json` at runtime, causing a null reference error during SSR/SSG builds. This was fixed by statically importing `cosc.json` and removing all async fetch logic.
+- **Hydration Mismatch Error Fixed:**
+  - Removed all client/server conditional logic (such as `typeof window !== 'undefined'`) from the `style` prop in `page.js` to ensure consistent server and client rendering, resolving hydration errors.
+- **Deployment Ready:**
+  - The app is now compatible with static hosting platforms like Netlify and Vercel, with no runtime or build-time errors.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
