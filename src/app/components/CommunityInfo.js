@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react';
+import coscData from '../../../public/cosc.json';
 
 export default function CommunityInfo() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchMessage = async () => {
-      const res = await fetch('/cosc.json');
-      const data = await res.json();
-      setData(data);
-    };
-
-    fetchMessage();
-  }, []);
+  const data = coscData;
 
   return (
     <div className="text-center mb-6">
